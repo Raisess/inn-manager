@@ -4,8 +4,8 @@ import { Room } from "../../../entities/Room";
 export class LocalStorageRoomRepository implements IRoomRepository {
   private rooms: Room[] = [];
 
-  public async save(room: Room): Promise<void> {
-    this.rooms.push(room);
+  public async save(data: Room): Promise<void> {
+    this.rooms.push(data);
   }
 
   public async findOne(id: string): Promise<Room> {

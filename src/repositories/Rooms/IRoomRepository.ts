@@ -1,7 +1,7 @@
 import { Room } from "../../entities/Room";
 
 export interface IRoomRepository {
-  save(room: Room): Promise<void>;
+  save(data: Room): Promise<void>;
   findOne(id: string): Promise<Room>;
   findMany(): Promise<Room[]>;
   findByName(name: string): Promise<Room>;
