@@ -5,5 +5,5 @@ export type ErrorResponse = {
 };
 
 export interface IController<T> {
-  handle(req: Request, res: Response): Promise<Response<T | ErrorResponse>>;
+  handle(req: Request, res: Response): Promise<Response<T>>;
 }
