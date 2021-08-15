@@ -1,10 +1,11 @@
 import { CreateRoomUseCase } from "./CreateRoomUseCase";
 import { CreateRoomController } from "./CreateRoomController";
 
-import { LocalStorageRoomRepository } from "../../../../repositories/Rooms/implementations/LocalStorageRoomRepository";
+import { localStorageRoomRepository } from "../../../../repositories/Rooms/implementations/LocalStorageRoomRepository";
 
-const repository: LocalStorageRoomRepository = new LocalStorageRoomRepository();
-const useCase: CreateRoomUseCase = new CreateRoomUseCase(repository);
+const useCase: CreateRoomUseCase = new CreateRoomUseCase(
+  localStorageRoomRepository,
+);
 
 export const createRoomController: CreateRoomController =
   new CreateRoomController(useCase);
