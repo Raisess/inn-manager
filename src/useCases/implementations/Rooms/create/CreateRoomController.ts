@@ -1,10 +1,10 @@
 import { IController, ErrorResponse } from "../../../IController";
-import { IUseCase } from "../../../IUseCase";
+import { CreateRoomUseCase } from "./CreateRoomUseCase";
 
 import { Request, Response } from "express";
 
 export class CreateRoomController implements IController<void> {
-  constructor(private readonly useCase: IUseCase<void>) {}
+  constructor(private readonly useCase: CreateRoomUseCase) {}
 
   public async handle(
     req: Request,
