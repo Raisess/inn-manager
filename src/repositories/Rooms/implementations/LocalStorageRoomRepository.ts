@@ -1,7 +1,7 @@
 import { IRoomRepository } from "../IRoomRepository";
 import { Room } from "../../../entities/Room";
 
-export class LocalStorageRoomRepository implements IRoomRepository {
+class LocalStorageRoomRepository implements IRoomRepository {
   private rooms: Room[] = [];
 
   public async save(data: Room): Promise<void> {
@@ -32,3 +32,6 @@ export class LocalStorageRoomRepository implements IRoomRepository {
     this.rooms = this.rooms.filter((room) => room.id !== id);
   }
 }
+
+export const localStorageRoomRepository: LocalStorageRoomRepository =
+  new LocalStorageRoomRepository();
