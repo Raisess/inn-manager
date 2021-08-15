@@ -15,6 +15,8 @@ export class CreateRoomUseCase implements IUseCase<void> {
       throw new Error("Room already exists");
     }
 
-    await this.repository.save(data);
+    const room: Room = new Room(data);
+
+    await this.repository.save(room);
   }
 }
